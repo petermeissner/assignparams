@@ -12,6 +12,8 @@ knitr::opts_chunk$set(
 )
 ```
 
+[![Travis-CI Build Status](https://travis-ci.org/petermeissner/assignparams.svg?branch=master)](https://travis-ci.org/petermeissner/assignparams)
+
 **RStudio addin to evaluate function parameters via shortcut**
 
 This addin's use case was inspired by my personal workflow but technical details 
