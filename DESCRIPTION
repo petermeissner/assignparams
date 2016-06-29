@@ -1,8 +1,11 @@
 Package: assignparams
 Type: Package
-Title: What the Package Does (Title Case)
+Title: Evaluate Comma Separated Function Parameter in Global Environment
 Version: 0.1.0
-Authors@R: person("First", "Last", email = "first.last@example.com", role = c("aut", "cre"))
-Description: More about what it does (maybe more than one line)
-License: What license is it under?
+Authors@R: person("Peter", "Meissner", email = "retep.meissner@gmail.com", role = c("aut", "cre"))
+Description: This RStudio addin allows to evaluate a list of comma separated
+    function parameters within the global environment by hitting a shortcut.
+License: MIT + file LICENSE
 LazyData: TRUE
+RoxygenNote: 5.0.1
+Imports: rstudioapi

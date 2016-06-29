@@ -1,8 +1,6 @@
 #' evaluate comma separated function parameter in global environment
 #'
 #'
-#' @param fun A function object or a character string naming the function. See
-#' \code{\link{formals}} for details.
 #' @export
 assign_params <- function() {
   context <- rstudioapi::getActiveDocumentContext()
