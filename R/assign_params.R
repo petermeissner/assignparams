@@ -4,10 +4,17 @@
 #' @export
 assign_params <- function() {
   context <- rstudioapi::getActiveDocumentContext()
-  text <- context$selection[[1]]$text
-  text <- unlist(strsplit(text, ","))
-  print(text)
-  for(i in seq_along(text)){
-    try(eval(parse(text=text[i]), envir=globalenv()))
+  text    <- context$selection[[1]]$text
+    tryCatch(
+      eval(parse(text=text[i]), envir=globalenv()),
+      error = function(e){
+        tmp   <- eval(parse(text = paste0("function(",text,"){}")))
+        val   <- formals(tmp)
+        iffer <- as.character(val)!=""
+        nam   <- names(val)[iffer]
+        val   <- val[iffer]
+        eval(parse(text=paste(nam, val, sep="=")), envir = globalenv())
+      }
+    )
   }
-}
+
