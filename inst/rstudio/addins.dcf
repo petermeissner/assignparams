@@ -1,0 +1,4 @@
+Name: assignparams
+Description: evaluate comma separated function parameter in global environment
+Binding: assign_params
+Interactive: false
