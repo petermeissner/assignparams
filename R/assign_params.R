@@ -3,6 +3,7 @@
 #'
 #' @export
 assign_params <- function() {
+  ls_old  <- ls(globalenv())
   context <- rstudioapi::getActiveDocumentContext()
   text    <- context$selection[[1]]$text
     tryCatch(
@@ -16,5 +17,9 @@ assign_params <- function() {
         eval(parse(text=paste(nam, val, sep="=")), envir = globalenv())
       }
     )
-  }
+  tmp <- ls(globalenv())[ !(ls(globalenv()) %in% ls_old)]
+  message(paste(tmp, collapse = " "))
+  message(".")
+  NULL
+}
 
